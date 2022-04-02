@@ -170,15 +170,13 @@ const drawerWidth = 256;
 export default function Paperbase() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
-  const { speak } = useSpeechSynthesis();
+  const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
   const handleUserKeyPress = event => {
     const { key } = event;
-    
     const text = `Você apertou a tecla "${key}"`; 
-    console.log(text);
     speak({text});
   };
   React.useEffect(()=>{
