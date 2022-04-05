@@ -1,13 +1,12 @@
 import * as React from 'react';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import SpellcheckIcon from '@mui/icons-material/Spellcheck';
-import TimerIcon from '@mui/icons-material/Timer';
 import SettingsIcon from '@mui/icons-material/Settings';
-import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
-
+import HomeIcon from '@mui/icons-material/Home';
 export let categories = [
   {
     id: 'Home',
+    icon: <HomeIcon />,
     children: [ ],
   },
     {
@@ -26,9 +25,7 @@ export let categories = [
     {
       id: 'Tools',
       children: [
-        { id: 'Braille Editor', icon: <SettingsIcon />, to: "/" },
-        { id: 'Performance', icon: <TimerIcon />, to: "/" },
-        { id: 'Test Lab', icon: <PhonelinkSetupIcon />, to: "/" },
+        { id: 'Braille Editor', icon: <SettingsIcon />, to: "brailleEditor" }
       ],
     },
   ];

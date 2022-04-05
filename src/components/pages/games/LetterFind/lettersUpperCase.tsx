@@ -1,4 +1,4 @@
-interface KeyboardKeyInterface {
+export interface  KeyboardKeyInterface {
     key: number,
     upperKey: number,
     speak: string

@@ -3,6 +3,7 @@ import {Route, Routes} from 'react-router-dom'
 import LetterFind from '../../pages/games/LetterFind';
 import Spelling from '../../pages/games/Spelling';
 import Home from '../../pages/Home';
+import BrailleEditor from '../../pages/tools/BrailleEditor';
 
 
 export default function MainRoutes() {
@@ -11,6 +12,7 @@ export default function MainRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="letterFind" element={<LetterFind />} />
         <Route path="spelling" element={<Spelling />} />
+        <Route path="brailleEditor" element={<BrailleEditor />} />
     </Routes>
   );
 }

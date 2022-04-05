@@ -7,11 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
 import { Trans } from 'react-i18next';
 import { categories } from "./menu";
 import { Link } from 'react-router-dom';
-
 const item = {
   py: '2px',
   px: 3,
@@ -36,32 +34,24 @@ export default function Navigator(props: DrawerProps) {
         <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
           <Trans>WebVox</Trans>
         </ListItem>
-        <ListItem sx={{ ...item, ...itemCategory }}>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText><Trans>Menu</Trans></ListItemText>
-        </ListItem>
-        {categories.map(({ id, children }) => (
+        
+        {categories.map(({ id, icon: iconParent, children }) => (
           
           <Box key={id} sx={{ bgcolor: '#101F33' }}>
-            <ListItem sx={{ py: 2, px: 3 }}>
-              <ListItemText sx={{ color: '#fff' }}><Trans>{id}</Trans></ListItemText>
+            <ListItem sx={{ py: 2, px: 3 }}  >
+              <ListItemText sx={{ color: '#fff' }}>
+                { iconParent && <ListItemIcon>{iconParent}</ListItemIcon>}
+                <Trans>{id}</Trans>
+              </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, to, active }) => (
-              <Link
-              to={
-                to
-              }
-              className="NavLinkItem"
-             
-            >
-              <ListItem disablePadding key={childId}>
-                <ListItemButton selected={active} sx={item}>
-                  <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText><Trans>{childId}</Trans></ListItemText>
-                </ListItemButton>
-              </ListItem>
+              <Link to={to} className="NavLinkItem">
+                <ListItem disablePadding key={childId}>
+                  <ListItemButton selected={active} sx={item}>
+                    <ListItemIcon>{icon}</ListItemIcon>
+                    <ListItemText><Trans>{childId}</Trans></ListItemText>
+                  </ListItemButton>
+                </ListItem>
               </Link>
             ))}
             <Divider sx={{ mt: 2 }} />

@@ -1,34 +1,43 @@
 import * as React from 'react';
 import { useSpeechSynthesis } from "react-speech-kit";
 import { KeyboardIcon } from './keyboards/InternationalStandart';
+import { upperKeysLetters, KeyboardKeyInterface } from './lettersUpperCase';
 export default function LetterFind() {
-    const iconRef = React.useRef(null);
     const onEnd = () => {
-        document.querySelector(`svg path#key${keyCodePressed}`)?.setAttribute("fill", "black");
-        keyPressed = "";
+        document.querySelector(`svg path#key${keyDetails.keyCodePressed}`)?.setAttribute("fill", "black");
+        keyDetails.keyPressed = "";
     };
-
+    const [keyDetails] = React.useState({
+        keyCodePressed: 0,
+        keyPressed: "",
+      });
     const { speak } = useSpeechSynthesis({onEnd});
-    let keyCodePressed: number=0;
-    let keyPressed: string = "";
+
     React.useEffect(() => {        
         const handleUserKeyDown = (event: any) => {
-            const { key, keyCode } = event;
-            keyPressed=key;
-            keyCodePressed=keyCode;
-            console.log(keyPressed);
-            console.log(keyCodePressed);
-            speak({ text: `: ${keyPressed}`});
-            document.querySelector(`svg path#key${keyCodePressed}`)?.setAttribute("fill", "red");
+            if(keyDetails.keyPressed==="") {
+                const { key, keyCode } = event;
+                keyDetails.keyPressed=key;
+                keyDetails.keyCodePressed=keyCode;
+               
+                speak({ text: `: ${keyDetails.keyPressed}`});
+                let keyLocal:KeyboardKeyInterface|undefined = upperKeysLetters.find((obj) => {
+                    return obj.key === keyDetails.keyCodePressed ||  obj.upperKey === keyDetails.keyCodePressed
+                  });
+                console.log(keyDetails.keyCodePressed);
+                if(keyLocal?.key)
+                    keyDetails.keyCodePressed=keyLocal?.key;
+                document.querySelector(`svg path#key${keyLocal?.key}`)?.setAttribute("fill", "red");
+            } 
         };
-        window.addEventListener("keypress", handleUserKeyDown);
+        window.addEventListener("keydown", handleUserKeyDown);
         return () => {
-            window.removeEventListener('keypress', handleUserKeyDown);
+            window.removeEventListener('keydown', handleUserKeyDown);
         };
-    }, [speak, keyPressed, keyCodePressed, iconRef]);
+    }, [speak,keyDetails]);
     return (
-        <div ref={iconRef}>
-            <KeyboardIcon  />
+        <div>
+            <KeyboardIcon />
         </div>
         
     );

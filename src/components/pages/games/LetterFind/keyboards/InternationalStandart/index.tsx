@@ -1,7 +1,7 @@
 import React from 'react'
+import '../../index.less'
 
-
-export const KeyboardIcon = () => {
+export const KeyboardIcon = (props:any) => {
 
   return (
 
@@ -73,68 +73,68 @@ export const KeyboardIcon = () => {
  
 </g>
 
-  <text className='' x="9.735" y="45.251" transform="matrix(1, 0, 0, 1, 19.469999, -9.047127)">~<tspan x="9.734999656677246" dy="1em">​</tspan>`<tspan x="9.734999656677246" dy="1em">​</tspan></text>
-  <text  x="118.626" y="43.087">1</text>
-  <text  x="207.992" y="42.944">2</text>
-  <text  x="295.351" y="42.944">3</text>
-  <text  x="384.385" y="43.087">4</text>
-  <text  x="472.55" y="43.087">5</text>
-  <text  x="561.258" y="42.944">6</text>
-  <text  x="651.144" y="42.944">7</text>
-  <text  x="740.308" y="43.087" >8</text>
-  <text  x="831.149" y="42.944">9</text>
-  <text  x="922.578" y="42.944" transform="matrix(1, 0, 0, 1, -1.632609, 0.143003)">0<tspan x="922.5780029296875" dy="1em">​</tspan></text>
-  <text  x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 2.460492, -14.489661)">-<tspan x="1006.343994140625" dy="1em">​</tspan>_</text>
-  <text  x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 85.606079, -14.489661)">+<tspan x="1006.343994140625" dy="1em">​</tspan>=</text>
-  <text  x="1154.701" y="43.087">backspace</text>
-  <text  x="167.647" y="128.333">Q</text>
-  <text  x="254.339" y="128.333">W</text>
-  <text  x="346.403" y="128.333" >E</text>
-  <text  x="435.452" y="128.333" >R</text>
-  <text  x="523.307" y="128.333" >T</text>
-  <text  x="611.245" y="128.333" >Y</text>
-  <text  x="700.019" y="128.333" >U</text>
-  <text  x="793.669" y="128.333" >I</text>
-  <text  x="877.715" y="128.333" >O</text>
-  <text  x="965.944" y="128.333" >P</text>
-  <text  x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 56.197502, 70.516808)"><tspan x="1006.343994140625" dy="1em">​</tspan></text>
-  <text  x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 148.357056, 70.516808)"><tspan x="1006.343994140625" dy="1em">​</tspan></text>
-  <text  x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 230.810638, 70.516808)">|<tspan x="1006.343994140625" dy="1em">​</tspan>\</text>
-  <text  x="45.157" y="128.333">tab</text>
-  <text  x="29.205" y="217.106" >caps lock</text>
-  <text  x="204.881" y="217.106" >A</text>
-  <text  x="295.351" y="217.106" >S</text>
-  <text  x="384.385" y="217.106" >D</text>
-  <text  x="472.55" y="217.106" >F</text>
-  <text  x="558.258" y="217.106" >G</text>
-  <text  x="647.557" y="217.106" >H</text>
-  <text  x="740.308" y="217.106" >J</text>
-  <text  x="831.149" y="217.106" transform="matrix(1, 0, 0, 1, -3.111378, 0)" >K<tspan x="831.1489868164062" dy="1em">​</tspan></text>
-  <text  x="920.945" y="217.106" >L</text>
-  <text  x="1007.948" y="217.106" transform="matrix(1, 0, 0, 1, 1.000043, -14.559919)" >:<tspan x="1007.947998046875" dy="1em">​</tspan>;</text>
-  <text  x="1007.948" y="217.106" transform="matrix(1, 0, 0, 1, 94.77655, -14.559918)" >"<tspan x="1007.947998046875" dy="1em">​</tspan>,</text>
-  <text  x="1185.825" y="217.106" >Enter</text>
-  <text  x="65.043" y="301.599" >Shift</text>
-  <text  x="231.857" y="301.599" >Z</text>
-  <text  x="321.983" y="301.599" >X</text>
-  <text  x="410.513" y="301.599" >C</text>
-  <text  x="497.338" y="301.599" >V</text>
-  <text  x="584.269" y="301.599" >B<tspan x="584.2689819335938" dy="1em">​</tspan></text>
-  <text  x="675.911" y="301.599" >N</text>
-  <text  x="762.034" y="301.599" >M</text>
-  <text  x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 7.708202, -11.134045)" >&lt;<tspan x="845.1669921875" dy="1em">​</tspan>,</text>
-  <text  x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 97.071838, -11.134045)" >&gt;<tspan x="845.1669921875" dy="1em">​</tspan>.</text>
-  <text  x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 186.762085, -11.134045)" >?<tspan x="845.1669921875" dy="1em">​</tspan>/</text>
-  <text  x="1154.701" y="301.599" >shift</text>
-  <text  x="17.408" y="383.225" >ctrl</text>
-  <text  x="115.741" y="383.225" >fn</text>
-  <text  x="285.268" y="383.225" >alt</text>
-  <text  x="1070.959" y="383.225" >alt gr</text>
-  <text  x="1227.493" y="383.225" >ctrl</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="9.735" y="45.251" transform="matrix(1, 0, 0, 1, 19.469999, -9.047127)">~<tspan x="9.734999656677246" dy="1em">​</tspan>`<tspan x="9.734999656677246" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="118.626" y="43.087">1</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="207.992" y="42.944">2</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="295.351" y="42.944">3</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="384.385" y="43.087">4</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="472.55" y="43.087">5</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="561.258" y="42.944">6</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="651.144" y="42.944">7</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="740.308" y="43.087" >8</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="831.149" y="42.944">9</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="922.578" y="42.944" transform="matrix(1, 0, 0, 1, -1.632609, 0.143003)">0<tspan x="922.5780029296875" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 2.460492, -14.489661)">-<tspan x="1006.343994140625" dy="1em">​</tspan>_</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 85.606079, -14.489661)">+<tspan x="1006.343994140625" dy="1em">​</tspan>=</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1154.701" y="43.087">backspace</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="167.647" y="128.333">Q</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="254.339" y="128.333">W</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="346.403" y="128.333" >E</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="435.452" y="128.333" >R</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="523.307" y="128.333" >T</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="611.245" y="128.333" >Y</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="700.019" y="128.333" >U</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="793.669" y="128.333" >I</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="877.715" y="128.333" >O</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="965.944" y="128.333" >P</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 56.197502, 70.516808)"><tspan x="1006.343994140625" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 148.357056, 70.516808)"><tspan x="1006.343994140625" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1006.344" y="42.944" transform="matrix(1, 0, 0, 1, 230.810638, 70.516808)">|<tspan x="1006.343994140625" dy="1em">​</tspan>\</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="45.157" y="128.333">tab</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="29.205" y="217.106" >caps lock</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="204.881" y="217.106" >A</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="295.351" y="217.106" >S</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="384.385" y="217.106" >D</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="472.55" y="217.106" >F</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="558.258" y="217.106" >G</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="647.557" y="217.106" >H</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="740.308" y="217.106" >J</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="831.149" y="217.106" transform="matrix(1, 0, 0, 1, -3.111378, 0)" >K<tspan x="831.1489868164062" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="920.945" y="217.106" >L</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1007.948" y="217.106" transform="matrix(1, 0, 0, 1, 1.000043, -14.559919)" >:<tspan x="1007.947998046875" dy="1em">​</tspan>;</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1007.948" y="217.106" transform="matrix(1, 0, 0, 1, 94.77655, -14.559918)" >"<tspan x="1007.947998046875" dy="1em">​</tspan>,</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1185.825" y="217.106" >Enter</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="65.043" y="301.599" >Shift</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="231.857" y="301.599" >Z</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="321.983" y="301.599" >X</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="410.513" y="301.599" >C</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="497.338" y="301.599" >V</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="584.269" y="301.599" >B<tspan x="584.2689819335938" dy="1em">​</tspan></text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="675.911" y="301.599" >N</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="762.034" y="301.599" >M</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 7.708202, -11.134045)" >&lt;<tspan x="845.1669921875" dy="1em">​</tspan>,</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 97.071838, -11.134045)" >&gt;<tspan x="845.1669921875" dy="1em">​</tspan>.</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="845.167" y="296.032" transform="matrix(1, 0, 0, 1, 186.762085, -11.134045)" >?<tspan x="845.1669921875" dy="1em">​</tspan>/</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1154.701" y="301.599" >shift</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="17.408" y="383.225" >ctrl</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="115.741" y="383.225" >fn</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="285.268" y="383.225" >alt</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1070.959" y="383.225" >alt gr</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="1227.493" y="383.225" >ctrl</text>
   <text x="669.284" y="363.312">
 </text>
-  <text  x="630.911" y="383.225" >Space</text>
-  <text  x="193.834" y="383.225" >Win</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="630.911" y="383.225" >Space</text>
+  <text fontFamily='Arial, sans-serif' fontSize="25.2px" fill='rgb(255, 255, 255)' x="193.834" y="383.225" >Win</text>
 
 
 </svg>
