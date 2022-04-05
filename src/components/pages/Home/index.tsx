@@ -11,9 +11,9 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
-export default function Content() {
+export default function Home() {
   return (
-    <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
+    <Paper sx={{  margin: 'auto', overflow: 'hidden' }}>
       <AppBar
         position="static"
         color="default"
