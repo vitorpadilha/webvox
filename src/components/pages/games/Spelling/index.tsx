@@ -21,7 +21,7 @@ export default function Spelling() {
             console.log(key);
             console.log(wordDetails.letters[wordDetails.position].letter);
             if(key == wordDetails.letters[wordDetails.position].letter) {
-                speak({ text: `Você acertou! Digite a próxima letra.`});
+                wordDetails.word.length == wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
                 wordDetails.letters[wordDetails.position].discovered=true;
                 wordDetails.position++;
             }
