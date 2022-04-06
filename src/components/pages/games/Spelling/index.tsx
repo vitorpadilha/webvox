@@ -6,27 +6,32 @@ import { words } from './words';
 import { Button, Tooltip } from '@mui/material';
 import { Trans } from 'react-i18next';
 export default function Spelling() {
-    const { speak } = useSpeechSynthesis();
-   
+    const onEnd = () => {
+        wordDetails.enable = true;
+    };
+    const { speak } = useSpeechSynthesis({onEnd});
     const [wordDetails] = React.useState({
         word: "",
         level: 0,
         letters:[{letter:"", discovered:true}],
-        position:0 
+        position:0,
+        enable:true
       });
     React.useEffect(() => {        
         const handleUserKeyDown = (event: any) => {
-           
-            const { key, keyCode } = event;
-            console.log(key);
-            console.log(wordDetails.letters[wordDetails.position].letter);
-            if(key == wordDetails.letters[wordDetails.position].letter) {
-                wordDetails.word.length == wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
-                wordDetails.letters[wordDetails.position].discovered=true;
-                wordDetails.position++;
-            }
-            else {
-                speak({ text: `Você errou! Tente novamente.`});
+            if(wordDetails.enable) {
+                const { key, keyCode } = event;
+                console.log(key);
+                wordDetails.enable = false;
+                console.log(wordDetails.letters[wordDetails.position].letter);
+                if(key == wordDetails.letters[wordDetails.position].letter) {
+                    wordDetails.word.length == wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
+                    wordDetails.letters[wordDetails.position].discovered=true;
+                    wordDetails.position++;
+                }
+                else {
+                    speak({ text: `Você errou! Tente novamente.`});
+                }
             }
             
         };
