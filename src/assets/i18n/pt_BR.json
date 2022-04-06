@@ -1,12 +1,16 @@
 {
     "translation": {
       "hello":"Oi",
+      "Hi":"Oi",
       "this line is translated":"Essa Linha foi traduzida",
       "Spelling":"Soletrando",
       "Letter Find":"Procurando Letras",
       "Go to docs": "Ir para Documentação",
       "Home":"Início",
       "Braille Editor":"Editor Braille",
-      "WebVox": "WebVox"
+      "WebVox": "WebVox",
+      "Calculator": "Tabuada",
+      "Click Here to Start": "Clique aqui para Iniciar",
+      "The Word is:": "A palavra sorteada é:"
     }
   }

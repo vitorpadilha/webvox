@@ -13,4 +13,5 @@ for(var i=97;i<=122;i++) {
         }
     );
 }
+upperKeysLetters.push({key:32, upperKey:0, speak: "Space"});
    

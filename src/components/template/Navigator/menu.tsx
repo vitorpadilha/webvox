@@ -3,6 +3,7 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import SpellcheckIcon from '@mui/icons-material/Spellcheck';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HomeIcon from '@mui/icons-material/Home';
+import CalculateIcon from '@mui/icons-material/Calculate';
 export let categories = [
   {
     id: 'Home',
@@ -12,14 +13,9 @@ export let categories = [
     {
       id: 'Games',
       children: [
-        {
-          id: 'Letter Find',
-          icon: <SpellcheckIcon />,
-          to: "letterFind",
-          active: true,
-        },
+        { id: 'Letter Find', icon: <SpellcheckIcon />, to: "letterFind", active: true },
         { id: 'Spelling', icon: <KeyboardIcon />, to: "spelling" },
-        
+        { id: 'Calculator', icon: <CalculateIcon />, to: "calculator" },
       ],
     },
     {
