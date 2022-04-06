@@ -21,10 +21,8 @@ export default function Spelling() {
         const handleUserKeyDown = (event: any) => {
             if(wordDetails.enable) {
                 const { key } = event;
-                console.log(key);
                 wordDetails.enable = false;
-                console.log(wordDetails.letters[wordDetails.position].letter);
-                if(key.upperKey() === wordDetails.letters[wordDetails.position].letter.toUpperCase()) {
+                if(key.toString().toUpperCase() === wordDetails.letters[wordDetails.position].letter.toUpperCase()) {
                     wordDetails.word.length === wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
                     wordDetails.letters[wordDetails.position].discovered=true;
                     wordDetails.position++;
@@ -57,10 +55,10 @@ export default function Spelling() {
     const listenAgain = (event: any) => {
         speak({ text: `A palavra sorteada é: ${wordDetails.word}`});
     }
-    const renderButton  = (letter: any) => {
+    const renderButton  = (letter: any, index: number) => {
         if(letter.discovered)
-           return <Button>{letter.letter}</Button>;
-        return <Button>_</Button>;
+           return <Button key={index}>{letter.letter}</Button>;
+        return <Button key={index}>_</Button>;
      }
     return (
         <div>
@@ -77,19 +75,16 @@ export default function Spelling() {
                         <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
                             
                             <br/>
-                            {wordDetails.letters.map((value) => (
-                               renderButton(value)
+                            {wordDetails.letters.map((value, index) => (
+                               renderButton(value, index)
                             ))}
                             <br/>
                             <Button onClick={listenAgain}><Trans>Listen Again</Trans></Button>
                         </Typography>
                     </Paper>
                     <br/>
-                    </div>
+                </div>
             }
-           
-            
-           
         </div>
     );
 }

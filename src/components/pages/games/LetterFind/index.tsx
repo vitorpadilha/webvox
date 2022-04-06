@@ -29,8 +29,7 @@ export default function LetterFind() {
         speak({ text: `A letra sorteada é: ${keyDetails.letterSorted}`});
         document.querySelector(`svg path#key${keyDetails.letterCodeSorted}`)?.setAttribute("fill", "yellow"); 
     },[speak,keyDetails]);
-    React.useEffect(() => {     
-          
+    React.useEffect(() => {
         const handleUserKeyDown = (event: any) => {
             const { key, keyCode } = event;
             if(keyDetails.keyPressed==="" && keyDetails.letterSorted) {
@@ -44,7 +43,7 @@ export default function LetterFind() {
                 if(keyLocal) {
                     keyDetails.keyCodePressed=keyLocal.key;
                     toSpeak = keyLocal.speak?keyLocal.speak:toSpeak;
-                }                    
+                }
                 if(keyDetails.letterCodeSorted !== keyDetails.keyCodePressed) {
                     document.querySelector(`svg path#key${keyDetails.keyCodePressed}`)?.setAttribute("fill", "red");
                     keyDetails.pontos--;
@@ -57,7 +56,7 @@ export default function LetterFind() {
                     keyDetails.pontos = keyDetails.pontos+5;
                     speak({ text: `Parabéns! Você acertou a letra! Você está com ${keyDetails.pontos} pontos! Pressione espaço duas vezes para sortear uma nova letra`});  
                 }
-            } 
+            }
             else if(keyCode===32 && !keyDetails.letterCodeSorted) {     
                if(keyDetails.spacePressed) sortitionLetter();    
                keyDetails.spacePressed=true;   
@@ -65,7 +64,6 @@ export default function LetterFind() {
             else {
                 keyDetails.spacePressed=false; 
             }
-                   
         };
         window.addEventListener("keydown", handleUserKeyDown);
         if(!keyDetails.firstSorted) {
@@ -83,7 +81,7 @@ export default function LetterFind() {
         <div>
             <Paper sx={{  margin: 'auto', overflow: 'hidden' }}>
             <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
-                <Button ><Trans>{keyDetails.pontos}</Trans></Button>
+                <Button ><Trans>Score: </Trans>{keyDetails.pontos}</Button>
             </Typography>
             </Paper> <br/>
             <KeyboardIcon />
