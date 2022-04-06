@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { useSpeechSynthesis } from "react-speech-kit";
 import { words } from './words';
-import { Button, Tooltip } from '@mui/material';
+import { Button } from '@mui/material';
 import { Trans } from 'react-i18next';
 export default function Spelling() {
     const onEnd = () => {
@@ -20,12 +20,12 @@ export default function Spelling() {
     React.useEffect(() => {        
         const handleUserKeyDown = (event: any) => {
             if(wordDetails.enable) {
-                const { key, keyCode } = event;
+                const { key } = event;
                 console.log(key);
                 wordDetails.enable = false;
                 console.log(wordDetails.letters[wordDetails.position].letter);
-                if(key == wordDetails.letters[wordDetails.position].letter) {
-                    wordDetails.word.length == wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
+                if(key.upperKey() === wordDetails.letters[wordDetails.position].letter.toUpperCase()) {
+                    wordDetails.word.length === wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
                     wordDetails.letters[wordDetails.position].discovered=true;
                     wordDetails.position++;
                 }
