@@ -3,30 +3,33 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { useSpeechSynthesis } from "react-speech-kit";
 import { words } from './words';
-import { Button, Tooltip } from '@mui/material';
+import { Button } from '@mui/material';
 import { Trans } from 'react-i18next';
 export default function Spelling() {
-    const { speak } = useSpeechSynthesis();
-   
+    const onEnd = () => {
+        wordDetails.enable = true;
+    };
+    const { speak } = useSpeechSynthesis({onEnd});
     const [wordDetails] = React.useState({
         word: "",
         level: 0,
         letters:[{letter:"", discovered:true}],
-        position:0 
+        position:0,
+        enable:true
       });
     React.useEffect(() => {        
         const handleUserKeyDown = (event: any) => {
-           
-            const { key, keyCode } = event;
-            console.log(key);
-            console.log(wordDetails.letters[wordDetails.position].letter);
-            if(key == wordDetails.letters[wordDetails.position].letter) {
-                wordDetails.word.length == wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
-                wordDetails.letters[wordDetails.position].discovered=true;
-                wordDetails.position++;
-            }
-            else {
-                speak({ text: `Você errou! Tente novamente.`});
+            if(wordDetails.enable) {
+                const { key } = event;
+                wordDetails.enable = false;
+                if(key.toString().toUpperCase() === wordDetails.letters[wordDetails.position].letter.toUpperCase()) {
+                    wordDetails.word.length === wordDetails.position+1?speak({ text: `Você digitou toda a palavra corretamente! Parabéns!`}):speak({ text: `Você acertou! Digite a próxima letra.`});;
+                    wordDetails.letters[wordDetails.position].discovered=true;
+                    wordDetails.position++;
+                }
+                else {
+                    speak({ text: `Você errou! Tente novamente.`});
+                }
             }
             
         };
@@ -52,10 +55,10 @@ export default function Spelling() {
     const listenAgain = (event: any) => {
         speak({ text: `A palavra sorteada é: ${wordDetails.word}`});
     }
-    const renderButton  = (letter: any) => {
+    const renderButton  = (letter: any, index: number) => {
         if(letter.discovered)
-           return <Button>{letter.letter}</Button>;
-        return <Button>_</Button>;
+           return <Button key={index}>{letter.letter}</Button>;
+        return <Button key={index}>_</Button>;
      }
     return (
         <div>
@@ -72,19 +75,16 @@ export default function Spelling() {
                         <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
                             
                             <br/>
-                            {wordDetails.letters.map((value) => (
-                               renderButton(value)
+                            {wordDetails.letters.map((value, index) => (
+                               renderButton(value, index)
                             ))}
                             <br/>
                             <Button onClick={listenAgain}><Trans>Listen Again</Trans></Button>
                         </Typography>
                     </Paper>
                     <br/>
-                    </div>
+                </div>
             }
-           
-            
-           
         </div>
     );
 }
