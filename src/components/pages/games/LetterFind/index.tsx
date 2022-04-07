@@ -36,6 +36,7 @@ export default function LetterFind() {
                 keyDetails.spacePressed=false;
                 keyDetails.keyPressed=key;
                 keyDetails.keyCodePressed=keyCode;
+
                 var toSpeak = keyDetails.keyPressed;                
                 let keyLocal:KeyboardKeyInterface|undefined = upperKeysLetters.find((obj) => {
                     return obj.key === keyDetails.keyCodePressed ||  obj.upperKey === keyDetails.keyCodePressed
@@ -71,7 +72,7 @@ export default function LetterFind() {
             keyDetails.firstSorted = true;
         }
         return () => {
-            window.removeEventListener("keydown", handleUserKeyDown);
+            window.removeEventListener('keydown', handleUserKeyDown);
         };
         
     }, [speak,keyDetails,sortitionLetter]);
