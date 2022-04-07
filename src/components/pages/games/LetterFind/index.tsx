@@ -19,25 +19,20 @@ export default function LetterFind() {
                 const { key, keyCode } = event;
                 keyDetails.keyPressed=key;
                 keyDetails.keyCodePressed=keyCode;
-                var toSpeak = keyDetails.keyPressed;
-                
+               
+                speak({ text: `: ${keyDetails.keyPressed}`});
                 let keyLocal:KeyboardKeyInterface|undefined = upperKeysLetters.find((obj) => {
                     return obj.key === keyDetails.keyCodePressed ||  obj.upperKey === keyDetails.keyCodePressed
                   });
-                console.log(keyLocal);
-                if(keyLocal) {
-                    keyDetails.keyCodePressed=keyLocal.key;
-                    toSpeak = keyLocal.speak?keyLocal.speak:toSpeak;
-                }
-                    
-                speak({ text: `: ${toSpeak}`});
                 console.log(keyDetails.keyCodePressed);
-                document.querySelector(`svg path#key${keyDetails.keyCodePressed}`)?.setAttribute("fill", "red");
+                if(keyLocal?.key)
+                    keyDetails.keyCodePressed=keyLocal?.key;
+                document.querySelector(`svg path#key${keyLocal?.key}`)?.setAttribute("fill", "red");
             } 
         };
         window.addEventListener("keydown", handleUserKeyDown);
         return () => {
-            window.removeEventListener("keydown", handleUserKeyDown);
+            window.removeEventListener('keydown', handleUserKeyDown);
         };
     }, [speak,keyDetails]);
     return (
